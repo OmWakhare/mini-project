@@ -1,0 +1,121 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class db{
+	 		void setdata() {
+                {
+                    for(int i=0;i < n;i++)
+                     {
+                        System.out.println("Enter the title of the " + (i+1) +" book:");
+                        title[i] = in.nextLine();
+                        System.out.println("Enter the author of the " + (i+1) +" book:");
+                        author[i] = in.nextLine();
+                        System.out.println("Enter the publisher of the " + (i+1) +" book:");
+                        publisher[i] = in.nextLine();
+                        System.out.println("Enter the cost of the " + (i+1) + " book:");
+                        cost[i]=in.nextInt();
+                        System.out.println("Enter the number of books present in the Book shop:");
+                        count[i]=in.nextInt();
+                        in.nextLine();
+                     }//end of for loop
+                  }//end of setdata functio
+	 			try {
+					Class.forName("com.mysql.jdbc.Driver");
+					 Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/book","root","123456");
+					Statement stmt=con.createStatement();
+				     System.out.println("connection successful");
+					PreparedStatement s=con.prepareStatement("select * from book where tilte=? and author=?"); 
+					ResultSet rs=s.executeQuery();
+			            if(rs.next())
+			            {
+			                System.out.println("database connected successfully");
+			                
+			               String name=rs.getString("Title");
+			                System.out.println(title);
+			                int balance=rs.getInt("author");
+			                System.out.println(author);
+					  
+					
+					
+					 
+			                
+			                
+			                System.out.println("enter 1 you want to enter the data or enter 2 if you want to search a book");
+			                int a=sc.nextInt();
+			                if(a==1) {
+			                	
+                                void setdata() {
+                                    {
+                                        for(int i=0;i < n;i++)
+                                         {
+                                            System.out.println("Enter the title of the " + (i+1) +" book:");
+                                            title[i] = in.nextLine();
+                                            System.out.println("Enter the author of the " + (i+1) +" book:");
+                                            author[i] = in.nextLine();
+                                            System.out.println("Enter the publisher of the " + (i+1) +" book:");
+                                            publisher[i] = in.nextLine();
+                                            System.out.println("Enter the cost of the " + (i+1) + " book:");
+                                            cost[i]=in.nextInt();
+                                            System.out.println("Enter the number of books present in the Book shop:");
+                                            count[i]=in.nextInt();
+                                            in.nextLine();
+			                	
+			            
+			                	
+			                	
+	                }
+			    
+			                }
+			                if(a==2) {
+                                void search()
+                                {
+                                  int i;
+                                  System.out.println("***********Books present in the Book shop are*************"); 
+                                  for(i=0;i<n;i++)
+                                   {
+                                     System.out.println((i+1) + ". Title of the book:" +title[i]);
+                                    }
+                                  System.out.println("Enter the title of the book needed:");
+                                  String titkey;
+                                  titkey = in.nextLine(); 
+                                  int flag=0;
+                                  for(i=0;i<n;i++)
+                                  {
+                                     
+                                     if(titkey.equals(title[i]))
+                                       {
+                                         flag++;
+                                         break;
+                                       }// end of if condition
+                                   }// end of for loop
+//			                	
+			                }
+			                	
+			                }
+			                
+			                
+			            
+	 		
+			            
+	 			else{
+			                System.out.println("no book found in the book shop");
+			               
+			            }
+			            }
+					
+					
+				
+	 		
+			catch(Exception e) {
+				System.out.println(e);
+			}
+				
+	 			
+	 		}
+			
+			
+			
